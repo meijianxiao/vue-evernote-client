@@ -1,31 +1,31 @@
 <template>
   <div id="app">
-    <sidebar/>
-    <router-view/>
+    <sidebar></sidebar>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Sidebar from '@/components/Sidebar';
-
+import sidebar from '@/components/Sidebar.vue'
 export default {
-  name: 'App',
-  components: { Sidebar },
-};
+  name: 'app',
+  components: {
+    sidebar
+  }
+}
 </script>
 
 <style>
-@import "//at.alicdn.com/t/font_496303_kqrjhri8l25d0a4i.css";
-
+@import url(//at.alicdn.com/t/font_496303_kqrjhri8l25d0a4i.css);
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-html,body,#app{
+html, body, #app {
   height: 100%;
 }
-body{
+body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
@@ -39,16 +39,17 @@ a {
 ul, li{
   list-style: none;
 }
-.btn{
+.btn {
   color: #666;
   font-size: 12px;
   padding: 2px 4px;
   background-color: #fff;
   box-shadow: 0 0 2px 0 #ccc;
   border: none;
-  cursor: pointer;display: inline-block;
+  cursor: pointer;
+  display: inline-block;
 }
-#app{
+#app {
   display: flex;
   align-items: stretch;
 }
