@@ -1,9 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Login from '@/components/Login';
-import NotebookList from '@/components/NotebookList';
-import NoteDetail from '@/components/NoteDetail';
-import TrashDetail from '@/components/TrashDetail';
 // 解决ElementUI导航栏中的vue-router在3.0版本以上重复点菜单报错问题
 const originalPush = Router.prototype.push
 Router.prototype.push = function push(location) {
@@ -14,19 +10,20 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: '/login',
-      component: Login,
+      path:'/',
+      alias:'/notebooks',
+      component:()=>import('@/components/NotebookList')
     },
     {
-      path: '/notebooks',
-      component: NotebookList,
+      path: '/login',
+      component: ()=>import('@/components/Login')
     },
     {
       path: '/note',
-      component: NoteDetail,
+      component: ()=>import('@/components/NoteDetail')
     },
     {
       path: '/trash',
-      component: TrashDetail,
+      component: ()=>import('@/components/TrashDetail')
     }],
 });
